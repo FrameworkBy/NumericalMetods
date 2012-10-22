@@ -1,8 +1,8 @@
 package by.framework.nm.utils.sle;
 
-//import static java.lang.System.out;
 import java.util.ArrayList;
 
+@Deprecated
 public class Gaus {
 	private ArrayList<ArrayList<Double>> arrayA;
 	private ArrayList<Double> arrayB;
@@ -12,7 +12,6 @@ public class Gaus {
 	
 	private int SIZE;
 	private boolean REZULT_FOUND = true;
-	private boolean PRINT = false;
 	
 	public enum Errors {DETERMINANT, INPUT_SIZE};
 	
@@ -95,7 +94,7 @@ public class Gaus {
 		}
 	}
 	
-	public ArrayList<Double> getResult() {
+	public ArrayList<Double> getArrayResult() {
 		if(!REZULT_FOUND) {
 			return null;
 		} else {
@@ -103,7 +102,7 @@ public class Gaus {
 		}
 	}
 	
-	public double[] getArrayResult() {
+	public double[] getResult() {
 		double[] res = new double[SIZE];
 		for(int i = 0; i < SIZE; i++) {
 			res[i] = arrayB.get(i);

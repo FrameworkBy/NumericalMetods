@@ -8,7 +8,7 @@ public class SoneApplication {
 	public static void main(String[] args) {
 		try {
 			Newton newton = new Newton(new Fun1(), new Fun2());
-			double[] res = newton.solve(0.1, 0.);
+			double[] res = newton.solve(0.5, 1.);
 			out.print("[ ");
 			for(double r : res) {
 				out.printf("%f ", r);
