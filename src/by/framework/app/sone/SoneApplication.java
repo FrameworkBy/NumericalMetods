@@ -6,19 +6,24 @@ import by.framework.nm.utils.sone.Newton;
 public class SoneApplication {
 	
 	public static void main(String[] args) {
+		long timeout= System.currentTimeMillis();
+		for(int i = 0; i < 100000; i++) {
 		try {
 			Newton newton = new Newton(new Fun1(), new Fun2());
-			double[] res = newton.solve(0.1, 0.);
-			out.print("[ ");
+			double[] res = newton.solve(0.5, 1.);
+			/*out.print("[ ");
 			for(double r : res) {
 				out.printf("%f ", r);
 			}
 			out.println("]");
-			out.println(); out.println();
+			out.println(); out.println();*/
 		} catch (Exception e) {
 			out.println("Can't solve!");
 			e.printStackTrace();
 		}
+		}
+		timeout = System.currentTimeMillis() - timeout;
+		out.println(timeout);
 	}
 	
 	private static class Fun2 extends Function {

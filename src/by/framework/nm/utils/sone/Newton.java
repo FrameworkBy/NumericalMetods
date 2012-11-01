@@ -1,6 +1,6 @@
 package by.framework.nm.utils.sone;
 import static java.lang.System.out;
-import by.framework.nm.utils.sle.Gaus;
+import by.framework.nm.utils.sle.Gaus2;
 
 public class Newton {
 	
@@ -39,13 +39,13 @@ public class Newton {
 			}
 			
 			createJ();
-			Gaus gaus = new Gaus(arrayA, arrayB);
+			Gaus2 gaus = new Gaus2(arrayA, arrayB);
 			gaus.solve();
 			if(gaus.getError() != null) {
 				out.println(gaus.getError());
 				throw new Exception();
 			}
-			double[] res = gaus.getArrayResult();
+			double[] res = gaus.getResult();
 			
 			Rf = 0;
 			Rx = 0;
@@ -60,7 +60,7 @@ public class Newton {
 			}
 			Rf = Math.sqrt(Rf);
 			Rx = Math.sqrt(Rx);
-			out.printf("%d %f %f\n", iter, Rf, Rx);
+			//out.printf("%d %f %f\n", iter, Rf, Rx);
 			
 		} while(Rx >= eps && Rf >= eps);
 		
