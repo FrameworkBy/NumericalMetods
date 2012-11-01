@@ -60,7 +60,6 @@ public class Newton {
 			}
 			Rf = Math.sqrt(Rf);
 			Rx = Math.sqrt(Rx);
-			//out.printf("%d %f %f\n", iter, Rf, Rx);
 			
 		} while(Rx >= eps && Rf >= eps);
 		

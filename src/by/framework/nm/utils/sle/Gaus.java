@@ -2,6 +2,7 @@ package by.framework.nm.utils.sle;
 
 import java.util.ArrayList;
 
+@Deprecated
 public class Gaus {
 	private ArrayList<ArrayList<Double>> arrayA;
 	private ArrayList<Double> arrayB;
