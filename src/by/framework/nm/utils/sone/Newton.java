@@ -13,7 +13,7 @@ public class Newton {
 	private int SIZE = 0;
 	
 	private static final double eps = 10E-6;
-	private static final double dx = 10E-12;
+	private static final double dx = 10E-8;
 	private static final int MAX_ITER = 1000;
 	
 	public Newton(Function... functions) throws Exception {
@@ -21,8 +21,13 @@ public class Newton {
 		this.functions = functions; 
 	}
 	
-	public double[] solve(double... x) throws Exception {
-		if(x.length != SIZE) throw new Exception();
+	public double[] solve(double... inX) throws Exception {
+		if(inX.length != SIZE) throw new Exception();
+		
+		double[] x = new double[SIZE];
+		for(int i = 0; i < SIZE; i++) {
+			x[i] = inX[i];
+		}
 		
 		this.arrayA = new Double[SIZE][SIZE];
 		this.arrayB = new Double[SIZE];
@@ -91,9 +96,9 @@ public class Newton {
 		double f2 = functions[fun].calculate(vars2);
 		double t = f1 - f2;
 		double d = t/(2*dx);
-		if(Math.abs(d)<10E-15) {
+		/*if(Math.abs(d)<10E-15) {
 			throw new Exception();
-		}
+		}*/
 		return d;
 	}
 }
