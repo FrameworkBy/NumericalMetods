@@ -1,8 +1,6 @@
-package by.framework.nm.utils.diff;
+package by.framework.math;
 
 import static java.lang.System.out;
-import by.framework.nm.utils.sone.Function;
-import by.framework.nm.utils.sone.Newton;
 
 public class Shihman {
 
@@ -12,7 +10,7 @@ public class Shihman {
 	private final int SIZE;
 
 	private final double dTmin = 1E-15;
-	private final double Edop = 1E-6;
+	private final double Edop = 1E-8;
 
 	public Shihman(double t, double T, DiffFunction... funcs) {
 		this.funcs = funcs;
@@ -140,7 +138,7 @@ public class Shihman {
 				break;
 			}
 
-			Rk = (dTc*dTc*(dTc+dTp) * (dTc + dTp)) / (2*dTc+dTp);
+			Rk = (dTc*dTc*dTc * (dTc + dTp)) / (2*dTc+dTp);
 			kpp = dTpp*(dTp+dTpp)*(dTc+dTp+dTpp);
 			kp = dTp*dTpp*(dTc+dTp);
 			kc = dTc*dTp*(dTp+dTpp);
@@ -160,15 +158,6 @@ public class Shihman {
 				}
 				continue;
 			}
-			
-			/*
-			System.out.print(iter + " : " + tnext + " : ");
-			out.print("[ ");
-			for(double r : Yn) {
-				out.printf("%f ", r);
-			}
-			out.println("]");
-			//*/
 
 			if(maxEk<=(Edop/4.)) dTn = 2.*dTc;
 			else dTn = dTc;

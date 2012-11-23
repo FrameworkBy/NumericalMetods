@@ -1,8 +1,6 @@
-package by.framework.nm.utils.diff;
+package by.framework.math;
 
 import static java.lang.System.out;
-import by.framework.nm.utils.sone.Function;
-import by.framework.nm.utils.sone.Newton;
 
 public class NEiler extends Eiler {
 
@@ -77,15 +75,6 @@ public class NEiler extends Eiler {
 				}
 				continue;
 			}
-
-			/*
-			System.out.print(c + " : " + tnext + " : ");
-			out.print("[ ");
-			for(double r : Ynext) {
-				out.printf("%f ", r);
-			}
-			out.println("]");
-			//*/
 
 			if(maxEk<=(Edop/4.)) dTknext = 2.*dTk;
 			else dTknext = dTk;

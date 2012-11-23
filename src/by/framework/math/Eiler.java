@@ -1,4 +1,4 @@
-package by.framework.nm.utils.diff;
+package by.framework.math;
 
 import static java.lang.System.out;
 

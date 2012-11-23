@@ -1,7 +1,7 @@
-package by.framework.app.sone;
+package by.framework.app;
 import static java.lang.System.out;
-import by.framework.nm.utils.sone.Function;
-import by.framework.nm.utils.sone.Newton;
+import by.framework.math.Function;
+import by.framework.math.Newton;
 
 public class SoneApplication {
 	

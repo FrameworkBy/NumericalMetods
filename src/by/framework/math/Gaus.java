@@ -1,8 +1,8 @@
-package by.framework.nm.utils.sle;
+package by.framework.math;
 
 import java.util.ArrayList;
 
-public class Gaus2 {
+public class Gaus {
 	
 	private boolean REZULT_FOUND = true;
 	private Errors error;
@@ -16,10 +16,10 @@ public class Gaus2 {
 	private ArrayA arrayA;
 	private ArrayB arrayB;
 	
-	private Double[][] inputArrayA;
-	private Double[] inputArrayB;
+	private double[][] inputArrayA;
+	private double[] inputArrayB;
 	
-	public Gaus2(Double[][] arrayA, Double[] arrayB) {
+	public Gaus(double[][] arrayA, double[] arrayB) {
 		if(testArraysSize(arrayA, arrayB)) {
 			this.srcArrayA = new double[arrayA.length][arrayA.length];
 			this.srcArrayB = new double[arrayB.length];
@@ -41,13 +41,13 @@ public class Gaus2 {
 		}
 	}
 	
-	public Gaus2(ArrayList<ArrayList<Double>> arrayA, ArrayList<Double> arrayB) {
+	public Gaus(ArrayList<ArrayList<Double>> arrayA, ArrayList<Double> arrayB) {
 		if(testArraysSize(arrayA, arrayB)) {
 			this.srcArrayA = new double[arrayA.size()][arrayA.size()];
 			this.srcArrayB = new double[arrayB.size()];
 			
-			this.inputArrayA = new Double[arrayA.size()][arrayA.size()];
-			this.inputArrayB = new Double[arrayB.size()];
+			this.inputArrayA = new double[arrayA.size()][arrayA.size()];
+			this.inputArrayB = new double[arrayB.size()];
 			
 			for(int i = 0; i < arrayA.size(); i++) {
 				for(int j = 0; j < arrayA.get(i).size(); j++) {
@@ -115,7 +115,7 @@ public class Gaus2 {
 		return res;
 	}
 	
-	private boolean testArraysSize(Double[][] A, Double[] B) {
+	private boolean testArraysSize(double[][] A, double[] B) {
 		int S = A.length;
 		for(int i = 0; i < S; i++) {
 			if(A[i].length != S) {

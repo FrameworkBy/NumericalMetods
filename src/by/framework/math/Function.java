@@ -1,4 +1,4 @@
-package by.framework.nm.utils.sone;
+package by.framework.math;
 
 
 public abstract class Function implements Computable {

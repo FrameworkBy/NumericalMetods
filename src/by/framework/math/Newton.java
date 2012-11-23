@@ -1,12 +1,11 @@
-package by.framework.nm.utils.sone;
+package by.framework.math;
 import static java.lang.System.out;
-import by.framework.nm.utils.sle.Gaus2;
 
 public class Newton {
 	
 	private Function[] functions;
-	private Double[] arrayB;
-	private Double[][] arrayA;
+	private double[] arrayB;
+	private double[][] arrayA;
 	
 	private double[] variables;
 	
@@ -29,8 +28,8 @@ public class Newton {
 			x[i] = inX[i];
 		}
 		
-		this.arrayA = new Double[SIZE][SIZE];
-		this.arrayB = new Double[SIZE];
+		this.arrayA = new double[SIZE][SIZE];
+		this.arrayB = new double[SIZE];
 		
 		variables = new double[SIZE];
 		
@@ -44,7 +43,7 @@ public class Newton {
 			}
 			
 			createJ();
-			Gaus2 gaus = new Gaus2(arrayA, arrayB);
+			Gaus gaus = new Gaus(arrayA, arrayB);
 			gaus.solve();
 			if(gaus.getError() != null) {
 				out.println(gaus.getError());
@@ -96,9 +95,6 @@ public class Newton {
 		double f2 = functions[fun].calculate(vars2);
 		double t = f1 - f2;
 		double d = t/(2*dx);
-		/*if(Math.abs(d)<10E-15) {
-			throw new Exception();
-		}*/
 		return d;
 	}
 }

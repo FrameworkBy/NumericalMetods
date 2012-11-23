@@ -1,6 +1,5 @@
-package by.framework.nm.utils.diff;
+package by.framework.math;
 
-import by.framework.nm.utils.sone.Function;
 
 public abstract class DiffFunction extends Function {
 	

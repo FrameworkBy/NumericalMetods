@@ -1,9 +1,9 @@
-package by.framework.app.diff;
+package by.framework.app;
 
-import by.framework.nm.utils.diff.DiffFunction;
-import by.framework.nm.utils.diff.Eiler;
-import by.framework.nm.utils.diff.NEiler;
-import by.framework.nm.utils.diff.Shihman;
+import by.framework.math.DiffFunction;
+import by.framework.math.Eiler;
+import by.framework.math.NEiler;
+import by.framework.math.Shihman;
 
 public class DiffApplication {
 
